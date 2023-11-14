@@ -1,0 +1,10 @@
+---
+- name: Start Tomcat
+  hosts: 172.31.15.150
+  become: true
+  remote_user: root  # Specify your SSH user here
+  tasks:
+    - name: Ensure Tomcat is started
+      systemd:
+        name: tomcat
+        state: started
